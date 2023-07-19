@@ -8,7 +8,7 @@ app = Flask(  # Create a flask app
 )
 
 
-users={"guy":"111","said":"222", "yazan":"333"}
+users={"guy":"111","said":"222", "yazan":"333","Loai":"444"}
 facebook_friends=["Loai","Kenda","Avigail", "George", "Fouad", "Gi"]
 
 
@@ -20,6 +20,8 @@ def login():
 		else:
 			if request.form['username'].lower() in users.keys()  and request.form['password'] in users.values():
 				return redirect(url_for('home'))
+			else:
+				return redirect(url_for('login'))
 
 @app.route('/home')
 def home():
